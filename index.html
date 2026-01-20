@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇧🇷 Brasile 2026 - Viaggio di Gruppo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #a8d5e2;
+            --secondary-color: #f4c9a1;
+            --text-dark: #4a5568;
+            --text-light: #718096;
+            --bg-light: #f9f7f4;
+            --border-color: #e8d5cc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #a8d5e2 0%, #8dc3d3 100%);
+            color: #2d3748;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 0;
+            background-color: white;
+            border-bottom: 2px solid var(--border-color);
+            overflow-x: auto;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs button {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            white-space: nowrap;
+        }
+
+        .nav-tabs button:hover {
+            background-color: #f0e6dd;
+            color: var(--primary-color);
+        }
+
+        .nav-tabs button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-item {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h4 {
+            color: var(--text-dark);
+            margin-top: 0.8rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .info-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0.5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background-color 0.3s;
+            margin-top: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: #8dc3d3;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0b380;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th {
+            background-color: #a8d5e2;
+            color: #2d3748;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background-color: var(--bg-light);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background-color: var(--border-color);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .timeline-content {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 2rem auto;
+            height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs button {
+                font-size: 0.85rem;
+                padding: 0.8rem 0.5rem;
+                flex: 0 0 auto;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🇧🇷 Brasile 2026 - Viaggio di Gruppo</h1>
+        <p>15 Giorni di Avventura</p>
+    </header>
+
+    <div class="nav-tabs">
+        <button class="nav-tab-btn active" data-tab="dashboard">📊 Dashboard</button>
+        <button class="nav-tab-btn" data-tab="itinerary">📅 Itinerario</button>
+        <button class="nav-tab-btn" data-tab="flights">✈️ Voli</button>
+        <button class="nav-tab-btn" data-tab="accommodations">🏨 Alloggi</button>
+        <button class="nav-tab-btn" data-tab="budget">💰 Budget</button>
+        <button class="nav-tab-btn" data-tab="curiosities">🎓 Curiosità</button>
+        <button class="nav-tab-btn" data-tab="portuguese">🗣️ Portoghese</button>
+        <button class="nav-tab-btn" data-tab="info">ℹ️ Info</button>
+    </div>
+
+    <div class="container">
+        <!-- DASHBOARD SECTION -->
+        <div id="dashboard" class="section active">
+            <h2>📊 Dashboard Viaggio</h2>
+            
+            <div class="card-grid">
+                <div class="card-item">
+                    <h4>📅 Durata</h4>
+                    <p class="info-text" style="font-size: 1.5rem; color: var(--primary-color); font-weight: 600;">15 Giorni</p>
+                    <p class="info-text">7 Agosto - 22 Agosto 2026</p>
+                </div>
+                
+                <div class="card-item">
+                    <h4>💰 Budget</h4>
+                    <p class="info-text" style="font-size: 1.5rem; color: var(--secondary-color); font-weight: 600;">€ 2.500</p>
+                    <p class="info-text">Per persona (15 giorni)</p>
+                </div>
+
+                <div class="card-item">
+                    <h4>✅ Confermati</h4>
+                    <p class="info-text" style="font-size: 1.5rem; color: #27ae60; font-weight: 600;">8 Persone</p>
+                    <p class="info-text" style="font-size: 0.9rem;">Robi, Ale, Michi, Gio, Ila, Leo, Franci, Lo</p>
+                </div>
+
+                <div class="card-item">
+                    <h4>⏳ In Forse</h4>
+                    <p class="info-text" style="font-size: 1.5rem; color: var(--secondary-color); font-weight: 600;">2 Persone</p>
+                    <p class="info-text" style="font-size: 0.9rem;">Chicca, Omar</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🎯 Tappe Principali</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">🏖️ <strong>Salvador</strong> - Capitale della Bahia (7-9 agosto)</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">🏔️ <strong>Chapada Diamantina</strong> - Montagne e cascate (9-12 agosto)</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">🌊 <strong>Valença</strong> - Porto fluviale (12-13 agosto)</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">🏝️ <strong>Boipeba</strong> - Isola incontaminata (13-15 agosto)</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">🌅 <strong>Morro di São Paulo</strong> - Isola affascinante (15-17 agosto)</li>
+                    <li style="padding: 0.8rem 0;">🎭 <strong>Rio de Janeiro</strong> - Città meravigliosa (17-21 agosto)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ITINERARY SECTION -->
+        <div id="itinerary" class="section">
+            <h2>📅 Itinerario Completo</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Venerdì 7 Agosto 2026</div>
+                    <div class="timeline-content">
+                        <h4>Partenza da Milano</h4>
+                        <p>✈️ <strong>UX1066 Iberia</strong> - Milano Malpensa (MXP) → Madrid (MAD)</p>
+                        <p>11:05 → 13:55 | Scalo: 3h 05min</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Venerdì 7 Agosto (sera)</div>
+                    <div class="timeline-content">
+                        <h4>Volo verso Salvador</h4>
+                        <p>✈️ <strong>UX83 Iberia</strong> - Madrid (MAD) → Salvador (SSA)</p>
+                        <p>17:10 → 21:05 | Durata: 9h 55min</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Sabato 8 - Lunedì 9 Agosto</div>
+                    <div class="timeline-content">
+                        <h4>Salvador - Pousada Flores do Farol</h4>
+                        <p>🏨 2 notti - Barra, Salvador</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Lunedì 9 - Giovedì 12 Agosto</div>
+                    <div class="timeline-content">
+                        <h4>Chapada Diamantina - Casa Airbnb</h4>
+                        <p>🏔️ 3 notti - Palmeiras</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Giovedì 12 - Venerdì 13 Agosto</div>
+                    <div class="timeline-content">
+                        <h4>Valença - Pousada Belisco Beach</h4>
+                        <p>🌊 1 notte - Porto fluviale</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Venerdì 13 - Domenica 15 Agosto</div>
+                    <div class="timeline-content">
+                        <h4>Boipeba - Casa Airbnb Fronte Mare</h4>
+                        <p>🏝️ 2 notti - Isola incontaminata</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Domenica 15 - Lunedì 17 Agosto</div>
+                    <div class="timeline-content">
+                        <h4>Morro di São Paulo - Bamboo House</h4>
+                        <p>🌅 2 notti - Isola senza auto</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Lunedì 17 Agosto</div>
+                    <div class="timeline-content">
+                        <h4>Volo interno per Rio</h4>
+                        <p>✈️ <strong>G3 1897 GOL</strong> - Salvador (SSA) → Rio (GIG)</p>
+                        <p>19:50 → 22:00 | Durata: 2h 10min</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Lunedì 17 - Venerdì 21 Agosto</div>
+                    <div class="timeline-content">
+                        <h4>Rio de Janeiro - Lobie Vilares Copacabana</h4>
+                        <p>🎭 4 notti - Copacabana</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Giovedì 22 Agosto</div>
+                    <div class="timeline-content">
+                        <h4>Arrivo a Milano</h4>
+                        <p>✅ Fine viaggio!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLIGHTS SECTION -->
+        <div id="flights" class="section">
+            <h2>✈️ Voli</h2>
+            
+            <div class="card">
+                <h3>🌍 Andata: Milano → Madrid → Salvador</h3>
+                <table>
+                    <tr>
+                        <th>Dettaglio</th>
+                        <th>Informazione</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Volo 1</strong></td>
+                        <td>UX1066 Iberia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Partenza</strong></td>
+                        <td>Milano MXP - Venerdì 7 Agosto 11:05</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arrivo Madrid</strong></td>
+                        <td>13:55</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scalo</strong></td>
+                        <td>3 ore 05 minuti</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Volo 2</strong></td>
+                        <td>UX83 Iberia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Partenza Madrid</strong></td>
+                        <td>17:10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arrivo Salvador</strong></td>
+                        <td>Sabato 8 Agosto 21:05</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>✈️ Volo Interno: Salvador → Rio</h3>
+                <table>
+                    <tr>
+                        <th>Dettaglio</th>
+                        <th>Informazione</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Numero Volo</strong></td>
+                        <td>G3 1897</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compagnia</strong></td>
+                        <td>GOL (Tarifa Light)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Partenza</strong></td>
+                        <td>Salvador SSA - Domenica 17 Agosto 19:50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arrivo</strong></td>
+                        <td>Rio GIG - 22:00 (Terminal 2)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Durata</strong></td>
+                        <td>2 ore 10 minuti</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🌍 Ritorno: Rio → Roma → Milano</h3>
+                <table>
+                    <tr>
+                        <th>Dettaglio</th>
+                        <th>Informazione</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Partenza</strong></td>
+                        <td>Rio de Janeiro GIG - Domenica 21 Agosto 14:25</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arrivo Roma</strong></td>
+                        <td>Lunedì 22 Agosto 06:40 (Fiumicino)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scalo Roma</strong></td>
+                        <td>Giro a Roma + shopping</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Volo Ritorno</strong></td>
+                        <td>Roma Fiumicino → Milano Linate</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Partenza da Roma</strong></td>
+                        <td>17:10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arrivo Milano</strong></td>
+                        <td>Lunedì 22 Agosto sera</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- ACCOMMODATIONS SECTION -->
+        <div id="accommodations" class="section">
+            <h2>🏨 Alloggi</h2>
+            
+            <div class="card">
+                <h3>1️⃣ Salvador - Pousada Flores do Farol</h3>
+                <p class="info-text"><strong>Periodo:</strong> 7-9 Agosto (2 notti)</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Av. Almirante Marques de Leão, 284, Barra, Salvador</p>
+                <p class="info-text"><strong>Prezzo:</strong> €31,25 per persona (€15,60/notte)</p>
+                <p class="info-text"><strong>Colazione:</strong> ✅ Inclusa</p>
+                <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 29 luglio</p>
+                <a href="https://www.booking.com/hotel/br/flores-do-farol.it.html" target="_blank" class="btn">🏨 Booking</a>
+                <a href="https://www.google.com/maps/search/Av.+Almirante+Marques+de+Leão,+284,+Barra,+Salvador" target="_blank" class="btn">📍 Maps</a>
+            </div>
+
+            <div class="card">
+                <h3>2️⃣ Chapada Diamantina - Casa Airbnb</h3>
+                <p class="info-text"><strong>Periodo:</strong> 9-12 Agosto (3 notti)</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Rua Chamego, 321 Sitio Pedra da Águia, Palmeiras, Bahia 46940-000</p>
+                <p class="info-text"><strong>Prezzo:</strong> €116,50 per persona (€38,83/notte)</p>
+                <p class="info-text"><strong>Colazione:</strong> ❌ Non inclusa</p>
+                <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 9 luglio</p>
+                <a href="https://www.airbnb.it/rooms/30313457" target="_blank" class="btn">🏠 Airbnb</a>
+                <a href="https://www.google.com/maps/search/Rua+Chamego,+321+Sitio+Pedra+da+Águia,+Palmeiras,+Bahia" target="_blank" class="btn">📍 Maps</a>
+            </div>
+
+            <div class="card">
+                <h3>3️⃣ Valença - Pousada Belisco Beach</h3>
+                <p class="info-text"><strong>Periodo:</strong> 12-13 Agosto (1 notte)</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Av. Aloisio Evangelista da Fonseca, 4935, Valença, CEP 45400-000</p>
+                <p class="info-text"><strong>Prezzo:</strong> €11,60 per persona</p>
+                <p class="info-text"><strong>Colazione:</strong> ❌ Non inclusa</p>
+                <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 8 agosto</p>
+                <a href="https://www.booking.com/hotel/br/pousada-belisco-beach-valenca3.it.html" target="_blank" class="btn">🏨 Booking</a>
+                <a href="https://www.google.com/maps/search/Av.+Aloisio+Evangelista+da+Fonseca,+4935,+Valença" target="_blank" class="btn">📍 Maps</a>
+            </div>
+
+            <div class="card">
+                <h3>4️⃣ Boipeba - Casa Airbnb Fronte Mare</h3>
+                <p class="info-text"><strong>Periodo:</strong> 13-15 Agosto (2 notti)</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Avenida Beira Mar, 45, Ilha de Boipeba, Bahia 45420-000</p>
+                <p class="info-text"><strong>Prezzo:</strong> €53,40 per persona (€26,70/notte)</p>
+                <p class="info-text"><strong>Colazione:</strong> ❌ Non inclusa</p>
+                <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 13 luglio</p>
+                <a href="https://www.airbnb.it/rooms/1053547576355451083" target="_blank" class="btn">🏠 Airbnb</a>
+                <a href="https://www.google.com/maps/search/Avenida+Beira+Mar,+45,+Ilha+de+Boipeba,+Bahia" target="_blank" class="btn">📍 Maps</a>
+            </div>
+
+            <div class="card">
+                <h3>5️⃣ Morro di São Paulo - Universo Pol Bamboo House</h3>
+                <p class="info-text"><strong>Periodo:</strong> 15-17 Agosto (2 notti)</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Rua de Lagoa, Morro de São Paulo, CEP 45420-000</p>
+                <p class="info-text"><strong>Prezzo:</strong> €36,20 per persona (€18,10/notte)</p>
+                <p class="info-text"><strong>Colazione:</strong> ✅ Inclusa</p>
+                <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 30 luglio</p>
+                <a href="https://www.booking.com/hotel/br/universo-pol-bamboo-house.it.html" target="_blank" class="btn">🏨 Booking</a>
+                <a href="https://www.google.com/maps/search/Rua+de+Lagoa,+Morro+de+São+Paulo" target="_blank" class="btn">📍 Maps</a>
+            </div>
+
+            <div class="card">
+                <h3>6️⃣ Rio de Janeiro - Lobie Vilares Copacabana</h3>
+                <p class="info-text"><strong>Periodo:</strong> 17-21 Agosto (4 notti)</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Rua Décio Vilares, 316, Copacabana, Rio de Janeiro, CEP 22041-040</p>
+                <p class="info-text"><strong>Prezzo:</strong> €92,50 per persona (€23,13/notte)</p>
+                <p class="info-text"><strong>Colazione:</strong> ❌ Non inclusa</p>
+                <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 9 agosto</p>
+                <a href="https://www.booking.com/hotel/br/lobie-vilares.it.html" target="_blank" class="btn">🏨 Booking</a>
+                <a href="https://www.google.com/maps/search/Rua+Décio+Vilares,+316,+Copacabana,+Rio+de+Janeiro" target="_blank" class="btn">📍 Maps</a>
+            </div>
+        </div>
+
+        <!-- BUDGET SECTION -->
+        <div id="budget" class="section">
+            <h2>💰 Budget Dettagliato</h2>
+            
+            <div class="card" style="background-color: #e8f2f5;">
+                <h3>📊 Grafico Budget per Persona</h3>
+                <div class="chart-container">
+                    <canvas id="budgetChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card" style="background-color: #e8f2f5;">
+                <h3>Riepilogo Completo</h3>
+                <table>
+                    <tr style="background-color: #d1e8f0;">
+                        <th>Voce</th>
+                        <th>Importo per Persona</th>
+                        <th>%</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Voli (Internazionali + Interno + Ritorno)</strong></td>
+                        <td>€ 1.179</td>
+                        <td>47,2%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alloggi (14 notti)</strong></td>
+                        <td>€ 341</td>
+                        <td>13,6%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trasporti Locali (auto, barca, taxi)</strong></td>
+                        <td>€ 250</td>
+                        <td>10,0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cibo e Bevande</strong></td>
+                        <td>€ 350</td>
+                        <td>14,0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Esperienze Extra (tour, escursioni)</strong></td>
+                        <td>€ 180</td>
+                        <td>7,2%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assicurazione Viaggio</strong></td>
+                        <td>€ 100</td>
+                        <td>4,0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Extra</strong></td>
+                        <td>€ 100</td>
+                        <td>4,0%</td>
+                    </tr>
+                    <tr style="background-color: #a8d5e2; color: #2d3748; font-weight: 600;">
+                        <td><strong>TOTALE</strong></td>
+                        <td><strong>€ 2.500</strong></td>
+                        <td><strong>100%</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- CURIOSITIES SECTION -->
+        <div id="curiosities" class="section">
+            <h2>🎓 Curiosità Storiche del Brasile</h2>
+            
+            <div class="card">
+                <h3>🏛️ Dal Colonialismo all'Indipendenza</h3>
+                <p class="info-text">Il Brasile era una colonia portoghese dal 1500, quando Pedro Álvares Cabral arrivò sulle coste. Per tre secoli fu sfruttato per le sue ricchezze naturali: legno del Brasile, zucchero, oro e diamanti. Nel 1822, il Principe Pietro dichiarò l'indipendenza dalla Portogallo, fondando l'Impero del Brasile, che durò fino al 1889.</p>
+            </div>
+
+            <div class="card">
+                <h3>🎭 La Cultura Della Schiavitù e la Resistenza</h3>
+                <p class="info-text">Il Brasile fu il paese che importò il maggior numero di schiavi africani nelle Americhe - più di 4 milioni. Questa storia ha profondamente segnato la cultura, la musica e la società brasiliana. Gli schiavi africani portarono i loro ritmi, religioni e tradizioni, creando fusioni uniche come il Carnaval, la Capoeira e la Samba.</p>
+            </div>
+
+            <div class="card">
+                <h3>🏙️ Rio di Janeiro: Dalla Capitale al Simbolo</h3>
+                <p class="info-text">Fondata nel 1565, Rio fu capitale del Brasile dal 1763 al 1960, quando Brasília venne costruita ex novo. Il Cristo Redentore, inaugurato nel 1931, è diventato il simbolo mondiale della città e dell'intera nazione brasiliana.</p>
+            </div>
+
+            <div class="card">
+                <h3>🌳 L'Amazzonia: Il Polmone del Pianeta</h3>
+                <p class="info-text">La foresta amazzonica copre circa il 60% del Brasile e contiene il 10% di tutta la biodiversità del pianeta. È stata cruciale per gli equilibri climatici globali e ancora oggi rimane una delle maggiori sfide ambientali del mondo.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚽ Il Calcio: Una Religione Nazionale</h3>
+                <p class="info-text">Il Brasile ha vinto la Coppa del Mondo 5 volte, più di qualsiasi altra nazione. Leggende come Pelé e Ronaldo hanno elevato il calcio a forma d'arte. Il calcio non è solo uno sport in Brasile, è parte dell'identità nazionale.</p>
+            </div>
+
+            <div class="card">
+                <h3>🎉 Il Carnaval: La Festa più Grande del Mondo</h3>
+                <p class="info-text">Il Carnaval di Rio, celebrato ogni anno prima della Quaresima, è considerato la festa più grande del mondo. Originario dalle tradizioni portoghesi e africane, è diventato una celebrazione unica di musica, danza, costumi e gioia che attrae milioni di visitatori.</p>
+            </div>
+        </div>
+
+        <!-- PORTUGUESE SECTION -->
+        <div id="portuguese" class="section">
+            <h2>🗣️ Portoghese Brasiliano - Vocabolario Essenziale</h2>
+            
+            <div class="card">
+                <h3>🙋 Saluti e Cortesia</h3>
+                <table>
+                    <tr style="background-color: #d1e8f0;">
+                        <th>Italiano</th>
+                        <th>Portoghese</th>
+                        <th>Pronuncia</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Ciao / Arrivederci</strong></td>
+                        <td>Olá / Adeus</td>
+                        <td>o-lá / a-dé-us</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Buongiorno</strong></td>
+                        <td>Bom dia</td>
+                        <td>bom di-a</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Buonasera</strong></td>
+                        <td>Boa noite</td>
+                        <td>bó-a no-i-te</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Per favore</strong></td>
+                        <td>Por favor</td>
+                        <td>por fa-vor</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grazie</strong></td>
+                        <td>Obrigado (m) / Obrigada (f)</td>
+                        <td>o-bri-gá-do / o-bri-gá-da</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prego / Di nulla</strong></td>
+                        <td>De nada</td>
+                        <td>de ná-da</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scusa / Permesso</strong></td>
+                        <td>Desculpa / Com licença</td>
+                        <td>des-cúl-pa / com li-sen-ça</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🏨 Viaggio e Alloggio</h3>
+                <table>
+                    <tr style="background-color: #d1e8f0;">
+                        <th>Italiano</th>
+                        <th>Portoghese</th>
+                        <th>Pronuncia</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Hotel</strong></td>
+                        <td>Hotel</td>
+                        <td>o-tel</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Camera</strong></td>
+                        <td>Quarto</td>
+                        <td>quar-to</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quanto costa?</strong></td>
+                        <td>Quanto custa?</td>
+                        <td>quan-to cus-ta</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dove è il bagno?</strong></td>
+                        <td>Onde fica o banheiro?</td>
+                        <td>on-de fi-ca o ba-nhei-ro</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Colazione</strong></td>
+                        <td>Café da manhã</td>
+                        <td>ca-fé da ma-nhã</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aeroporto</strong></td>
+                        <td>Aeroporto</td>
+                        <td>a-e-ro-por-to</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Taxi</strong></td>
+                        <td>Táxi</td>
+                        <td>tá-xi</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🍽️ Cibo e Ristoranti</h3>
+                <table>
+                    <tr style="background-color: #d1e8f0;">
+                        <th>Italiano</th>
+                        <th>Portoghese</th>
+                        <th>Pronuncia</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Ristorante</strong></td>
+                        <td>Restaurante</td>
+                        <td>res-tau-ran-te</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Menu</strong></td>
+                        <td>Cardápio</td>
+                        <td>car-dá-pio</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acqua</strong></td>
+                        <td>Água</td>
+                        <td>á-gua</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Birra</strong></td>
+                        <td>Cerveja</td>
+                        <td>cer-ve-ja</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conto / Fattura</strong></td>
+                        <td>Conta</td>
+                        <td>con-ta</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Buono / Delizioso</strong></td>
+                        <td>Delicioso / Gostoso</td>
+                        <td>de-li-ci-o-so / gos-to-so</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ho allergia a...</strong></td>
+                        <td>Tenho alergia a...</td>
+                        <td>te-nho a-ler-gia a...</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🆘 Emergenza e Utile</h3>
+                <table>
+                    <tr style="background-color: #d1e8f0;">
+                        <th>Italiano</th>
+                        <th>Portoghese</th>
+                        <th>Pronuncia</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Aiuto!</strong></td>
+                        <td>Socorro!</td>
+                        <td>so-cor-ro</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ospedale</strong></td>
+                        <td>Hospital</td>
+                        <td>os-pi-tal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medico</strong></td>
+                        <td>Médico</td>
+                        <td>mé-di-co</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Farmacia</strong></td>
+                        <td>Farmácia</td>
+                        <td>far-má-cia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Polizia</strong></td>
+                        <td>Polícia</td>
+                        <td>po-lí-cia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dove?</strong></td>
+                        <td>Onde?</td>
+                        <td>on-de</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Che ora è?</strong></td>
+                        <td>Que horas são?</td>
+                        <td>ke o-ras são</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>😊 Frasi Utili</h3>
+                <table>
+                    <tr style="background-color: #d1e8f0;">
+                        <th>Italiano</th>
+                        <th>Portoghese</th>
+                        <th>Pronuncia</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Mi chiamo...</strong></td>
+                        <td>Meu nome é...</td>
+                        <td>meu nó-me é...</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Piacere</strong></td>
+                        <td>Prazer</td>
+                        <td>pra-zer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Come stai?</strong></td>
+                        <td>Como vai? / Tudo bem?</td>
+                        <td>co-mo vai / tu-do bem</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bene, grazie</strong></td>
+                        <td>Tudo bem, obrigado</td>
+                        <td>tu-do bem, o-bri-gá-do</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Non parlo portoghese</strong></td>
+                        <td>Eu não falo português</td>
+                        <td>eu não fa-lo por-tu-guês</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parli italiano?</strong></td>
+                        <td>Você fala italiano?</td>
+                        <td>vo-cê fa-la i-ta-lia-no</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Che bellezza!</strong></td>
+                        <td>Que lindo! / Que belo!</td>
+                        <td>ke lin-do / ke bé-lo</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- INFO SECTION -->
+        <div id="info" class="section">
+            <h2>ℹ️ Informazioni Utili</h2>
+            
+            <div class="card">
+                <h3>🇧🇷 Il Brasile</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">📍 <strong>Capitale:</strong> Brasília</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">👥 <strong>Popolazione:</strong> 215 milioni</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">🗣️ <strong>Lingua:</strong> Portoghese brasiliano</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">💱 <strong>Valuta:</strong> Real (BRL)</li>
+                    <li style="padding: 0.8rem 0;">🌍 <strong>Fuso orario:</strong> -4 ore rispetto all'Italia</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🎒 Suggerimenti di Viaggio</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">💉 Verificare le vaccinazioni richieste</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">🏥 Assicurazione viaggio consigliata</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">👕 Abbigliamento leggero e crema solare</li>
+                    <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color);">📱 SIM card locale o piano dati internazionale</li>
+                    <li style="padding: 0.8rem 0;">💵 Portare contanti e carta di credito</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Navigation tabs functionality
+        const navButtons = document.querySelectorAll('.nav-tab-btn');
+        const sections = document.querySelectorAll('.section');
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and sections
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                button.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            });
+        });
+
+        // Initialize budget chart
+        window.addEventListener('load', () => {
+            const ctx = document.getElementById('budgetChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Voli (47,2%)', 'Cibo (14%)', 'Alloggi (13,6%)', 'Trasporti (10%)', 'Esperienze (7,2%)', 'Assicurazione (4%)', 'Extra (4%)'],
+                        datasets: [{
+                            data: [1179, 350, 341, 250, 180, 100, 100],
+                            backgroundColor: [
+                                '#a8d5e2',
+                                '#f4c9a1',
+                                '#a8d5a8',
+                                '#f0a8a8',
+                                '#d4a8f0',
+                                '#f0d4a8',
+                                '#a8e8f0'
+                            ],
+                            borderColor: '#ffffff',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 15,
+                                    font: {
+                                        size: 13
+                                    },
+                                    color: '#4a5568'
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return '€ ' + context.raw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
