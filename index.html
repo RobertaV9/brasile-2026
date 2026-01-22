@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🇧🇷 Brasile 2026 - Viaggio di Gruppo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,14 +17,14 @@
         :root {
             --primary-color: #a8d5e2;
             --secondary-color: #f4c9a1;
-            --text-dark: #4a5568;
-            --text-light: #718096;
+            --text-dark: #2c3e50;
+            --text-light: #5a6c7d;
             --bg-light: #f9f7f4;
             --border-color: #e8d5cc;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Rubik', sans-serif;
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
@@ -29,7 +32,7 @@
 
         header {
             background: linear-gradient(135deg, #a8d5e2 0%, #8dc3d3 100%);
-            color: #2d3748;
+            color: #1a2332;
             padding: 2rem;
             text-align: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -38,6 +41,7 @@
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .nav-tabs {
@@ -64,6 +68,7 @@
             transition: all 0.3s ease;
             min-width: 120px;
             white-space: nowrap;
+            font-family: 'Rubik', sans-serif;
         }
 
         .nav-tabs button:hover {
@@ -106,9 +111,10 @@
         }
 
         .card h3 {
-            color: var(--primary-color);
+            color: #5a7a8a;
             margin-bottom: 1rem;
             font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .card-grid {
@@ -137,18 +143,21 @@
             font-size: 1.8rem;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         h3 {
-            color: var(--primary-color);
+            color: #5a7a8a;
             margin-top: 1rem;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         h4 {
             color: var(--text-dark);
             margin-top: 0.8rem;
             margin-bottom: 0.4rem;
+            font-weight: 600;
         }
 
         .info-text {
@@ -170,6 +179,8 @@
             transition: background-color 0.3s;
             margin-top: 0.5rem;
             margin-right: 0.5rem;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 500;
         }
 
         .btn:hover {
@@ -192,7 +203,7 @@
 
         th {
             background-color: #a8d5e2;
-            color: #2d3748;
+            color: #1a2332;
             padding: 1rem;
             text-align: left;
             font-weight: 600;
@@ -247,7 +258,7 @@
 
         .timeline-date {
             font-weight: 600;
-            color: var(--primary-color);
+            color: #5a7a8a;
             font-size: 1.1rem;
         }
 
@@ -262,6 +273,50 @@
             max-width: 500px;
             margin: 2rem auto;
             height: 300px;
+        }
+
+        .countdown-box {
+            background: linear-gradient(135deg, #a8d5e2 0%, #8dc3d3 100%);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            border: none;
+        }
+
+        .countdown-box h3 {
+            color: #1a2332;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 1rem;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #5a7a8a;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-weight: 500;
         }
 
         @media (max-width: 768px) {
@@ -290,6 +345,10 @@
             th, td {
                 padding: 0.6rem;
             }
+
+            .countdown-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -314,6 +373,28 @@
         <!-- DASHBOARD SECTION -->
         <div id="dashboard" class="section active">
             <h2>📊 Dashboard Viaggio</h2>
+            
+            <div class="countdown-box">
+                <h3>⏳ Conto alla Rovescia</h3>
+                <div class="countdown-content">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">0</div>
+                        <div class="countdown-label">Giorni</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">0</div>
+                        <div class="countdown-label">Ore</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">0</div>
+                        <div class="countdown-label">Minuti</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">0</div>
+                        <div class="countdown-label">Secondi</div>
+                    </div>
+                </div>
+            </div>
             
             <div class="card-grid">
                 <div class="card-item">
@@ -591,7 +672,7 @@
             <div class="card">
                 <h3>4️⃣ Boipeba - Casa Airbnb Fronte Mare</h3>
                 <p class="info-text"><strong>Periodo:</strong> 13-15 Agosto (2 notti)</p>
-                <p class="info-text"><strong>Indirizzo:</strong> Avenida Beira Mar, 45, Ilha de Boipeba, Bahia 45420-000</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Avenida Beira Mar, 45, Ilha di Boipeba, Bahia 45420-000</p>
                 <p class="info-text"><strong>Prezzo:</strong> €53,40 per persona (€26,70/notte)</p>
                 <p class="info-text"><strong>Colazione:</strong> ❌ Non inclusa</p>
                 <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 13 luglio</p>
@@ -602,7 +683,7 @@
             <div class="card">
                 <h3>5️⃣ Morro di São Paulo - Universo Pol Bamboo House</h3>
                 <p class="info-text"><strong>Periodo:</strong> 15-17 Agosto (2 notti)</p>
-                <p class="info-text"><strong>Indirizzo:</strong> Rua de Lagoa, Morro de São Paulo, CEP 45420-000</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Rua di Lagoa, Morro di São Paulo, CEP 45420-000</p>
                 <p class="info-text"><strong>Prezzo:</strong> €36,20 per persona (€18,10/notte)</p>
                 <p class="info-text"><strong>Colazione:</strong> ✅ Inclusa</p>
                 <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 30 luglio</p>
@@ -611,9 +692,9 @@
             </div>
 
             <div class="card">
-                <h3>6️⃣ Rio de Janeiro - Lobie Vilares Copacabana</h3>
+                <h3>6️⃣ Rio di Janeiro - Lobie Vilares Copacabana</h3>
                 <p class="info-text"><strong>Periodo:</strong> 17-21 Agosto (4 notti)</p>
-                <p class="info-text"><strong>Indirizzo:</strong> Rua Décio Vilares, 316, Copacabana, Rio de Janeiro, CEP 22041-040</p>
+                <p class="info-text"><strong>Indirizzo:</strong> Rua Décio Vilares, 316, Copacabana, Rio di Janeiro, CEP 22041-040</p>
                 <p class="info-text"><strong>Prezzo:</strong> €92,50 per persona (€23,13/notte)</p>
                 <p class="info-text"><strong>Colazione:</strong> ❌ Non inclusa</p>
                 <p class="info-text"><strong>Cancellazione:</strong> Gratuita entro 9 agosto</p>
@@ -759,7 +840,7 @@
                     </tr>
                     <tr>
                         <td><strong>Prego / Di nulla</strong></td>
-                        <td>De nada</td>
+                        <td>Di nada</td>
                         <td>de ná-da</td>
                     </tr>
                     <tr>
@@ -918,8 +999,8 @@
                     </tr>
                     <tr>
                         <td><strong>Mi chiamo...</strong></td>
-                        <td>Meu nome é...</td>
-                        <td>meu nó-me é...</td>
+                        <td>Meu nome è...</td>
+                        <td>meu nó-me è...</td>
                     </tr>
                     <tr>
                         <td><strong>Piacere</strong></td>
@@ -985,6 +1066,34 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // Countdown function
+        function updateCountdown() {
+            const departureDate = new Date('2026-08-07T11:05:00').getTime();
+            const now = new Date().getTime();
+            const distance = departureDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+            } else {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
         // Navigation tabs functionality
         const navButtons = document.querySelectorAll('.nav-tab-btn');
         const sections = document.querySelectorAll('.section');
@@ -1054,8 +1163,8 @@
         });
     </script>
 </body>
-
 </html>
+
 
 
 
